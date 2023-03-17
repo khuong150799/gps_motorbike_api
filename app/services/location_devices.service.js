@@ -34,8 +34,8 @@ exports.register = async (data, result) => {
     // console.log(parseInt(data.deviceid) % 3);
     let lat = 25.1972;
     let lng = 55.2744;
-    let deviceid = 1;
-    for (let i = 0; i < 1000000; i++) {
+    let deviceid = 1138;
+    for (let i = 1150000; i < 4000000; i++) {
       const data = {
         deviceid,
         lat,
@@ -57,11 +57,11 @@ exports.register = async (data, result) => {
       }
       if (i % 1000 == 0) {
         deviceid++;
-        lat += 0.2;
-        lng += 0.2;
+        lat += 0.021;
+        lng += 0.021;
       }
-      lat += 0.1;
-      lng += 0.1;
+      lat += 0.001;
+      lng += 0.001;
     }
     let locationDevices;
     // switch (parseInt(data.deviceid) % 3) {

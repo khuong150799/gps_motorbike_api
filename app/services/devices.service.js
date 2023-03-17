@@ -5,28 +5,7 @@ exports.getAll = async (data, result) => {
   try {
     const { count, rows } = await db.Devices.findAndCountAll({});
     // console.log(count);==> number page
-    // let deviceid_one = [];
-    // let deviceid_two = [];
-    // let deviceid_three = [];
-    // rows.forEach((row) => {
-    //   switch (parseInt(row.id) % 3) {
-    //     case 0:
-    //       deviceid_one = [...deviceid_one, row.id];
-    //       break;
-    //     case 1:
-    //       deviceid_two = [...deviceid_two, row.id];
-    //       break;
-    //     case 2:
-    //       deviceid_three = [...deviceid_three, row.id];
-    //       break;
 
-    //     default:
-    //       break;
-    //   }
-    // });
-    // console.log("deviceid_one", deviceid_one);
-    // console.log("deviceid_two", deviceid_two);
-    // console.log("deviceid_three", deviceid_three);
     const locationDeviceOne = new Promise(function (resolve) {
       resolve(
         db.Location_devices_one.findAll({
@@ -42,9 +21,6 @@ exports.getAll = async (data, result) => {
                 )`),
             },
           },
-          // where: { deviceid: deviceid_one },
-          // order: [["id", "DESC"]],
-          // limit: 1,
         })
       );
     });
@@ -63,9 +39,6 @@ exports.getAll = async (data, result) => {
                 )`),
             },
           },
-          // where: { deviceid: deviceid_two },
-          // order: [["id", "DESC"]],
-          // limit: 1,
         })
       );
     });
@@ -84,9 +57,6 @@ exports.getAll = async (data, result) => {
                 )`),
             },
           },
-          // where: { deviceid: deviceid_three },
-          // order: [["id", "DESC"]],
-          // limit: 1,
         })
       );
     });
